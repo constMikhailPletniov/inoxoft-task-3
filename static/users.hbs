@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <style>
+        body {
+            background-color: darkslateblue;
+            color: floralwhite;
+        }
+
+        a {
+            margin: 5px;
+            padding: 5px;
+            border-radius: 5%;
+            border-style: groove;
+            color: floralwhite;
+            background-color: rgb(159, 119, 185);
+        }
+
+        a:hover {
+            background-color: rgb(218, 33, 224);
+        }
+
+        hr {
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <h1>Our user list</h1>
+    <div class="container">
+        {{#each users}}
+        <p>Name: {{this.name}}</p>
+        <p>Email: {{this.email}}</p>
+        <p>Password: {{this.pass}}</p>
+        <p>Age: {{this.age}}</p>
+        <a href="/users/{{this.id}}">Show user</a>
+        <hr>
+        {{/each}}
+    </div>
+    <footer>
+        <a href="../login">Go To Login</a>
+        <a href="../registration">Go To Registration</a>
+        <h2>The End of user list</h2>
+    </footer>
+</body>
+
+</html>
