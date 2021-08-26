@@ -16,15 +16,6 @@ const addUsers = async (data) => {
     users.push(data);
     await appendPromise(userPath, JSON.stringify(users));
 };
-
-const getID = async () => {
-    const getId = await getUsers();
-    const getKey = [];
-    for (const key in getId) {
-        getKey.push(key);
-    }
-    return getKey;
-};
 const getEmail = async (email) => {
     const users = await getUsers();
     const findEmail = await users.find((user) => user.email === email);
@@ -32,7 +23,6 @@ const getEmail = async (email) => {
 }
 
 module.exports = {
-    getID,
     addUsers,
     getUsers,
     getEmail,
